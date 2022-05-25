@@ -2,7 +2,7 @@
 
 This Project firebase link: [nanoMart Co. Ltd.](https://elegant-malasada-1d1e18.netlify.app/).
 
-## This site is about a manufacturer company. Where an user or admin who are logged in, can easily updated or deleted the current stock of items.
+## This site is about a manufacturer company. Where an user can easily purchased an items,and an admin who are logged in, can updated the current stock of items.
 
 # Given a different project name.
 
