@@ -27,17 +27,13 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="/purchase" className="hover:bg-red-700">
-          Purchase
+          Available Items
         </Link>
       </li>
+
       <li>
-        <Link to="/my-purchase" className="hover:bg-red-700">
-          My-Purchase
-        </Link>
-      </li>
-      <li>
-        <Link to="/manage-purchase" className="hover:bg-red-700">
-          Manage-Purchase
+        <Link to="/dashboard" className="hover:bg-red-700">
+          Dashboard
         </Link>
       </li>
       <li>
