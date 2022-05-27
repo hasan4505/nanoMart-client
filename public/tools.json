@@ -1,164 +1,165 @@
 [
+  
   {
     "_id": 1,
-	"name": "Bench heavy duty drill",
-    "description": "The PA-DRILL Heavy Duty Pillar Drill is an ideal machine for the demanding precision drilling. This robust column drill press is equipped with an Electric Motor of 1.5 horse power and 8 different speed settings, with a minimum speed of 100 RPM and maximum speed of 2520 RPM!",
-    "img": "",
-	"minimum_order": 10,
-	"available": 200,
-    "price": 1000
-  },
-  {
-    "_id": 2,
 	"name": "Black & decker power tools",
     "description": "Every project is unique, so you need tools that have the power and versatility to take on whatever comes your way. With BLACK+DECKER® cordless and corded power tools, you can tackle projects big and small.",
-    "img": "",
+    "img": "https://i.ibb.co/2gcDMsg/Black-decker-power-tools.png",
 	"minimum_order": 5,
 	"available": 100,
     "price": 300
   },
   {
-    "_id": 3,
+    "_id": 2,
 	"name": "Drills",
     "description": "Drill, drive, and DIY with BLACK+DECKER® power drills, cordless drills, drill/drivers, and hammer drills. Cordless models are available in 12V MAX*, 18V, and 20V MAX* power configurations and alone or in combo sets, while corded electric models are available in a range of amps to suit your needs.",
-    "img": "",
+    "img": "https://i.ibb.co/bv8Cqrb/Drills.png",
 	"minimum_order": 10,
 	"available": 200,
     "price": 500
   },
   {
-    "_id": 4,
+    "_id": 3,
 	"name": "Hammer drills",
     "description": "Power through stone, brick, masonry, and materials that a standard drill can't with cordless and corded hammer drills from BLACK+DECKER®.",
-    "img": "",
+    "img": "https://i.ibb.co/LSn7nVn/Hammer-drills.png",
 	"minimum_order": 15,
 	"available": 500,
     "price": 1000
   },
   {
-    "_id": 5,
+    "_id": 4,
 	"name": "Saws",
     "description": "The BLACK+DECKER® lineup of saws includes corded and cordless reciprocating saws, jig saws, chop saws, and circular saws.",
-    "img": "",
+    "img": "https://i.ibb.co/SxtvR6Y/Saws.png",
 	"minimum_order": 5,
 	"available": 500,
     "price": 200
   },
   {
-    "_id": 6,
+    "_id": 5,
 	"name": "Routers, Planers, + Jointers",
     "description": "Electric Variable Speed Plunge Router (10 Amp), 3-1/4 Electric Planer (4.5 Amp), with jointers",
-    "img": "",
+    "img": "https://i.ibb.co/Dtz7NC3/Routers-Planers-Jointers.png",
 	"minimum_order": 10,
 	"available": 500,
     "price": 5000
   },
   {
-    "_id": 7,
+    "_id": 6,
 	"name": "Multi-function tools",
     "description": "Some projects are not as clear-cut as they seem. That's where BLACK+DECKER® multi-function tools come in. Our range offers you the versatility to take on a variety of project tasks.",
-    "img": "",
+    "img": "https://i.ibb.co/KyvXXmB/Multy-function-tools.png",
 	"minimum_order": 5,
 	"available": 500,
     "price": 2000
   },
   {
-    "_id": 8,
+    "_id": 7,
 	"name": "Screwdrivers + Screw guns",
     "description": "Power screwdrivers are a versatile tool for everyday DIY tasks, from building flat pack furniture to putting up shelves. If the job is tough, go for screwdriver with higher torque to get the power you need. Enjoy even more functionality and versatility with our wide range of attachments and accessories, compatible across the 3.6V lithium range.",
-    "img": "",
+    "img": "https://i.ibb.co/BK5zKtC/Screwdrivers-Screwguns.png",
 	"minimum_order": 5,
 	"available": 1000,
     "price": 1000
   },
   {
-    "_id": 9,
+    "_id": 8,
 	"name": "Sanders",
     "description": "The right sander makes all the difference. BLACK+DECKER® sanders include corded and cordless power sanders, such as belt sanders, palm sanders, random orbital hand sanders, detail sanders, and accessories.",
-    "img": "",
+    "img": "https://i.ibb.co/kXprY0K/Sanders.png",
 	"minimum_order": 5,
 	"available": 300,
     "price": 500
   },
   {
-    "_id": 10,
+    "_id": 9,
 	"name": "Grinders",
     "description": "Grind your way through the task at hand. Whether you're removing rust, preparing a surface, or sharpening your tools, BLACK+DECKER® grinders make it easy.",
-    "img": "",
+    "img": "https://i.ibb.co/YtR96pY/Grinders.png",
 	"minimum_order": 15,
 	"available": 500,
     "price": 3000
   },
   {
-    "_id": 11,
+    "_id": 10,
 	"name": "Compressors",
     "description": "High Performance Cordless Inflator in AC/DC Multi Purpose Air Station (160 PSI) gives your work high smoothness and effectiveness. ",
-    "img": "",
+    "img": "https://i.ibb.co/L1dcDWF/Compressors.png",
 	"minimum_order": 5,
 	"available": 200,
     "price": 2000
   },
   {
-    "_id": 12,
+    "_id": 11,
 	"name": "Bosch air blowers",
     "description": "Its powerful airflow rate and flexible nozzle allow you to quickly get rid of dust and dirt effortlessly. This lightweight air blower weighs only 1.7 kg and can offer a power of up to 620 W, so you can easily remove all the heavy accumulated dust and dirt.",
-    "img": "",
+    "img": "https://i.ibb.co/k0PpnJV/Bosch-air-blowers.png",
 	"minimum_order": 10,
 	"available": 500,
     "price": 5000
   },
   {
-    "_id": 13,
+    "_id": 12,
 	"name": "Bosch angle grinders",
     "description": "The Bosch 1375A 4-1/2 In. Angle Grinder is designed for concrete contractors and other professionals who need a compact grinder. The 1375A is a light, ergonomic grinder, at only 3.75 Lbs. The tool has a 6.0-amp motor that produces 11,000 no-load rpm.",
-    "img": "",
+    "img": "https://i.ibb.co/Z291tYr/Bosch-angle-grinders.png",
 	"minimum_order": 10,
 	"available": 500,
     "price": 1500
   },
   {
-    "_id": 14,
+    "_id": 13,
 	"name": "Bosch drilling machine",
     "description": "Robust and powerful 500 W motor for professional use · Extremely compact design helps working in tight spaces and overhead · Low weight of only 1.5 kg provides ...",
-    "img": "",
+    "img": "https://i.ibb.co/Wv2dHmn/Bosch-drilling-machine.png",
 	"minimum_order": 10,
 	"available": 200,
     "price": 1000
   },
   {
-    "_id": 15,
+    "_id": 14,
 	"name": "Dewalt cutter",
     "description": "Cordless and Corded Power Tools, Saws and Gardening Tools. Wide Range of Toughsystem™ and T-Stack® Series available offering Dewalt Cutting Machine, Model: D28730.",
-    "img": "",
+    "img": "https://i.ibb.co/Sn1VWbn/Dewalt-cutter.png",
 	"minimum_order": 5,
 	"available": 300,
     "price": 1020
   },
   {
-    "_id": 16,
+    "_id": 15,
 	"name": "Electric drill",
     "description": "Originally designed as a Pistol Grip mains electricity powered (or corded) device, but battery powered (or cordless) versions are becoming more common. They are more convenient and the tendency now is to use the same battery pack on different single-purpose machines rather than use power drill attachments. 18 Volt drills are the most common and, in general, the higher the voltage, the more powerful and useful the drill.",
-    "img": "",
+    "img": "https://i.ibb.co/QKsKfWK/Electric-drill.png",
 	"minimum_order": 10,
 	"available": 300,
     "price": 1300
   },
   {
-    "_id": 17,
+    "_id": 16,
 	"name": "Heat gun",
     "description": "A heat gun is a device used to emit a stream of hot air, usually at temperatures between 100°C and 550°C, with some hotter models running around 760°C.",
-    "img": "",
+    "img": "https://i.ibb.co/B4YGN0J/Heat-gun.png",
 	"minimum_order": 5,
 	"available": 300,
     "price": 1000
   },
   {
-    "_id": 18,
+    "_id": 17,
 	"name": "Wall chaser",
     "description": "A wall chaser is a specialised power tool used for cutting narrow grooves in walls, for instance when laying electrical cable. The tool is usually powered by an electric motor which drives a pair of abrasive discs like those found in an angle grinder, positioned closely together.",
-    "img": "",
+    "img": "https://i.ibb.co/8DLKPw2/Wall-chaser.png",
 	"minimum_order": 5,
 	"available": 300,
     "price": 800
+  },
+  {
+    "_id": 18,
+	"name": "Bench heavy duty drill",
+    "description": "The PA-DRILL Heavy Duty Pillar Drill is an ideal machine for the demanding precision drilling. This robust column drill press is equipped with an Electric Motor of 1.5 horse power and 8 different speed settings, with a minimum speed of 100 RPM and maximum speed of 2520 RPM!",
+    "img": "https://i.ibb.co/kShLLbf/Bench-heavy-duty-drill.png",
+	"minimum_order": 10,
+	"available": 200,
+    "price": 1000
   }
 ]

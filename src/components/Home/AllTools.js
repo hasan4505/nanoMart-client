@@ -2,17 +2,14 @@ import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const AllTools = ({ tool }) => {
-  const { name, description, minimum_order, available, price } = tool;
+  const { name, img, description, minimum_order, available, price } = tool;
   const Navigate = useNavigate();
 
   return (
     <div className="card lg:card-top bg-base-100 shadow-xl">
       <div>
         <figure>
-          <img
-            src="https://api.lorem.space/image/album?w=400&h=400"
-            alt="Album"
-          />
+          <img src={img} alt="Album" />
         </figure>
       </div>
       <div className="card-body">

@@ -47,8 +47,8 @@ const MyAppointments = () => {
               <th></th>
               <th>Name</th>
               <th>quantity</th>
-              <th>Time</th>
-              <th>Treatment</th>
+              <th>Price</th>
+              <th>Total</th>
               <th>Payment</th>
             </tr>
           </thead>
@@ -57,9 +57,9 @@ const MyAppointments = () => {
               <tr key={a._id}>
                 <th>{index + 1}</th>
                 <td>{a.buyerName}</td>
-                <td>{a.buyer}</td>
                 <td>{a.number}</td>
-                <td>{a.phone}</td>
+                <td>{a.price}</td>
+                <td>{a.payment}</td>
                 <td>
                   {a.price && !a.paid && (
                     <Link to={`/dashboard/payment/${a._id}`}>

@@ -5,10 +5,8 @@ import Home from "./components/Home/Home";
 import Tools from "./components/Home/Tools";
 import MyPurchase from "./components/Dashboard/MyPurchase";
 import MyReview from "./components/Dashboard/MyReview";
-import MyHistory from "./components/Dashboard/MyHistory";
 import WriteReview from "./components/Home/WriteReview";
 import Login from "./components/Login/Login";
-import RequireAuth from "./components/Login/RequireAuth";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignUp from "./components/Login/SignUp";
 import AvailablePurchase from "./components/MyItems/AvailablePurchase";
@@ -17,12 +15,11 @@ import RequireAdmin from "./components/Login/RequireAdmin";
 import Users from "./components/Dashboard/Users";
 import Payment from "./components/Dashboard/Payment";
 import AddAdmin from "./components/Dashboard/AddAdmin";
-import ManageAdmin from "./components/Dashboard/ManageAdmin";
 import Blogs from "./components/Shared/Blogs";
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto px-5">
+    <div className="max-w-7xl mx-auto bg-base-200">
       <NaVbar></NaVbar>
       <Routes>
         <Route path="/" element={<Home></Home>} />
@@ -36,7 +33,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<MyPurchase />}></Route>
           <Route path="my-review" element={<MyReview></MyReview>}></Route>
-          <Route path="history" element={<MyHistory></MyHistory>}></Route>
+
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="users"
@@ -51,14 +48,6 @@ function App() {
             element={
               <RequireAdmin>
                 <AddAdmin></AddAdmin>
-              </RequireAdmin>
-            }
-          ></Route>
-          <Route
-            path="manageAdmin"
-            element={
-              <RequireAdmin>
-                <ManageAdmin></ManageAdmin>
               </RequireAdmin>
             }
           ></Route>

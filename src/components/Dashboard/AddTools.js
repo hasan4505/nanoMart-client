@@ -20,14 +20,6 @@ const AddTools = () => {
 
   const imageStorageKey = "4295ac4d47b569312bea67b440cdbdbb";
 
-  /**
-   * 3 ways to store images
-   * 1. Third party storage //Free open public storage is ok for Practice project
-   * 2. Your own storage in your own server (file system)
-   * 3. Database: Mongodb
-   *
-   * YUP: to validate file: Search: Yup file validation for react hook form
-   */
   const onSubmit = async (data) => {
     const image = data.image[0];
     const formData = new FormData();
@@ -41,10 +33,9 @@ const AddTools = () => {
       .then((result) => {
         if (result.success) {
           const img = result.data.url;
-          const doctor = {
+          const admin = {
             name: data.name,
             email: data.email,
-            specialty: data.specialty,
             img: img,
           };
           // send to your database
@@ -54,15 +45,15 @@ const AddTools = () => {
               "content-type": "application/json",
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
-            body: JSON.stringify(doctor),
+            body: JSON.stringify(admin),
           })
             .then((res) => res.json())
             .then((inserted) => {
               if (inserted.insertedId) {
-                toast.success("Doctor added successfully");
+                toast.success("Admin added successfully");
                 reset();
               } else {
-                toast.error("Failed to add the doctor");
+                toast.error("Failed to add the Admin");
               }
             });
         }
@@ -75,7 +66,7 @@ const AddTools = () => {
 
   return (
     <div>
-      <h2 className="text-2xl">Add a New Doctor</h2>
+      <h2 className="text-2xl">Add a New Admin</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -132,22 +123,6 @@ const AddTools = () => {
               </span>
             )}
           </label>
-        </div>
-
-        <div className="form-control w-full max-w-xs">
-          <label className="label">
-            <span className="label-text">Specialty</span>
-          </label>
-          <select
-            {...register("specialty")}
-            class="select input-bordered w-full max-w-xs"
-          >
-            {services.map((service) => (
-              <option key={service._id} value={service.name}>
-                {service.name}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div className="form-control w-full max-w-xs">

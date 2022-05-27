@@ -6,6 +6,8 @@ import AllTools from "./AllTools";
 import Summaries from "./Summaries";
 import Reviews from "./Reviews";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import Mission from "./Mission ";
+import Request from "./Request";
 
 const Home = () => {
   const [tools, setTools] = useTools();
@@ -19,7 +21,7 @@ const Home = () => {
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
-        {tools.slice(0, 6).map((tool) => (
+        {tools.slice(0, 3).map((tool) => (
           <AllTools key={tool._id} tool={tool}></AllTools>
         ))}
       </div>
@@ -36,6 +38,8 @@ const Home = () => {
           Leave a review
         </Link>
       </div>
+      <Mission></Mission>
+      <Request></Request>
 
       <Footer></Footer>
     </div>
