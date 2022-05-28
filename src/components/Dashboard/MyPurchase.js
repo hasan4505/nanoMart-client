@@ -14,7 +14,7 @@ const MyAppointments = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://secret-dusk-46242.herokuapp.com/booking?patient=${user.email}`,
+        `https://glacial-meadow-36697.herokuapp.com/booking?buyer=${user.email}`,
         {
           method: "GET",
           headers: {

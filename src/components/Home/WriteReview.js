@@ -7,7 +7,7 @@ const WriteReview = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/product`;
+    const url = `http://localhost:5000/review`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -48,6 +48,17 @@ const WriteReview = () => {
               type="text"
               placeholder="Review"
               {...register("review", { required: true, maxLength: 200 })}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label fs-5" htmlFor="name">
+              Rating
+            </label>
+            <textarea
+              className="form-control fs-5"
+              type="number"
+              placeholder="Rating"
+              {...register("rating", { required: true, maxLength: 1 })}
             />
           </div>
 

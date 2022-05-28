@@ -1,6 +1,8 @@
 ## `Project Name: nanoMart`
 
-This Project firebase link: [nanoMart Co. Ltd.](https://elegant-malasada-1d1e18.netlify.app/).
+This Project firebase link: [nanoMart Co. Ltd.](https://nanomart-2c12c.web.app/home).
+
+## Project client side hosting is firebase and server side host is heroku....
 
 ## This site is about a manufacturer company. Where an user can easily purchased an items,and an admin who are logged in, can updated the current stock of items.
 

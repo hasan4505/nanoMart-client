@@ -11,7 +11,7 @@ const AllReviews = ({ review }) => {
       </div>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{name}</h2>
-        <p>Rating: {rating}</p>
+        <p>Rating: {rating}out of 5</p>
         <p>Review: {review_}</p>
       </div>
     </div>

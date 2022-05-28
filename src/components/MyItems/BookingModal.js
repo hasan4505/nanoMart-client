@@ -1,16 +1,18 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
 import auth from "../../firebase/firebase.init";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const BookingModal = ({ buy, setBuy }) => {
-  const { _id, name, tools, minimum_order, available, price, number } = buy;
+  const { _id, name, minimum_order, available, price, number } = buy;
   const [user, loading, error] = useAuthState(auth);
+  const { register, handleSubmit } = useForm();
 
   const handleBooking = (event) => {
     event.preventDefault();
-    const tools = event.target.tools.value;
-    console.log(_id, name, tools);
+    const number = event.target.number.value;
+    console.log(_id, name, number);
 
     const booking = {
       buyId: _id,
@@ -22,7 +24,7 @@ const BookingModal = ({ buy, setBuy }) => {
       phone: event.target.phone.value,
     };
 
-    fetch("https://secret-dusk-46242.herokuapp.com/booking", {
+    fetch(`http://localhost:5000/booking`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,11 +34,9 @@ const BookingModal = ({ buy, setBuy }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast(`Item is purchased, ${name} at ${price}`);
+          toast(`Item is purchased`);
         } else {
-          toast.error(
-            `Already  purchased ${data.booking?.name} at ${data.booking?.tool}`
-          );
+          toast.error(`Already  purchased`);
         }
         setBuy(null);
       });
@@ -55,7 +55,7 @@ const BookingModal = ({ buy, setBuy }) => {
           </label>
           <h3 class="font-bold text-lg text-secondary">Buying item: </h3>
           <form
-            onSubmit={handleBooking}
+            onSubmit={handleSubmit(handleBooking)}
             className="grid grid-cols-1 gap-3 justify-items-center mt-2"
           >
             <input
@@ -63,6 +63,7 @@ const BookingModal = ({ buy, setBuy }) => {
               disabled
               value={name}
               class="input input-bordered w-full max-w-xs"
+              {...register("name", { required: true, maxLength: 20 })}
             />
 
             <input
@@ -71,6 +72,7 @@ const BookingModal = ({ buy, setBuy }) => {
               disabled
               value={user?.displayName || ""}
               className="input input-bordered w-full max-w-xs"
+              {...register("name", { required: true, maxLength: 20 })}
             />
             <input
               type="email"
@@ -86,6 +88,7 @@ const BookingModal = ({ buy, setBuy }) => {
               name={number}
               placeholder="order quantity"
               class="input input-bordered w-full max-w-xs"
+              {...register("price")}
             />
 
             <input

@@ -26,6 +26,9 @@ const Mission = () => {
             efficient service we are your hot tapping solution to save time and
             money.
           </p>
+          <button className="bg-accent text-black py-2 px-5 rounded-md my-5 font-semibold flex items-center gap-3 hover:bg-red-500 duration-200 ease-in">
+            Read More...
+          </button>
         </div>
       </section>
     </div>

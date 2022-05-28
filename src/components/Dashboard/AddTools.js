@@ -12,8 +12,8 @@ const AddTools = () => {
     reset,
   } = useForm();
 
-  const { data: services, isLoading } = useQuery("services", () =>
-    fetch("https://secret-dusk-46242.herokuapp.com/service").then((res) =>
+  const { data: services, isLoading } = useQuery("tools", () =>
+    fetch("https://glacial-meadow-36697.herokuapp.com/tool").then((res) =>
       res.json()
     )
   );
@@ -39,7 +39,7 @@ const AddTools = () => {
             img: img,
           };
           // send to your database
-          fetch("https://secret-dusk-46242.herokuapp.com/doctor", {
+          fetch("https://glacial-meadow-36697.herokuapp.com/admin", {
             method: "POST",
             headers: {
               "content-type": "application/json",

@@ -16,10 +16,12 @@ import Users from "./components/Dashboard/Users";
 import Payment from "./components/Dashboard/Payment";
 import AddAdmin from "./components/Dashboard/AddAdmin";
 import Blogs from "./components/Shared/Blogs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="max-w-7xl mx-auto bg-base-200">
+    <div className="max-w-7xl mx-auto ">
       <NaVbar></NaVbar>
       <Routes>
         <Route path="/" element={<Home></Home>} />
@@ -57,6 +59,7 @@ function App() {
         <Route path="my-portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="signup" element={<SignUp></SignUp>} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

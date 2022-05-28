@@ -12,9 +12,12 @@ const Reviews = () => {
           TESTIMONIAL
         </h3>
         <h2 className="text-4xl text-accent py-2">Meet Clients Satisfaction</h2>
+        <h2 className="text-4xl text-accent py-2">
+          Our valuable Clients Reviews are
+        </h2>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 drop-shadow-2xl">
-        {reviews.slice(0, 3).map((review) => (
+        {reviews.slice(0, 6).map((review) => (
           <AllReviews key={review.id} review={review}></AllReviews>
         ))}
       </div>
