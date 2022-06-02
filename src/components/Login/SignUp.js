@@ -1,168 +1,109 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+
 import auth from "../../firebase/firebase.init";
-import { useForm } from "react-hook-form";
+import SocialLogin from "../Login/SocialLogin";
 import Loading from "../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
-import useToken from "../../hooks/useToken";
-import SocialLogin from "./SocialLogin";
 
 const SignUp = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-  const [token] = useToken(user);
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
 
-  let signInError;
+  const navigateLogin = () => {
+    navigate("/login");
+  };
 
   if (loading || updating) {
     return <Loading></Loading>;
   }
 
-  if (error || updateError) {
-    signInError = (
-      <p className="text-red-500">
-        <small>{error?.message.message || updateError?.message}</small>
-      </p>
-    );
+  if (user) {
+    console.log("user", user);
   }
 
-  if (token) {
-    navigate("/appointment");
-  }
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
 
-  const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    console.log("update done");
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    console.log("Updated profile");
+    navigate("/home");
   };
+
   return (
-    <div className="flex h-screen justify-center items-center">
-      <div className="card w-96 bg-accent shadow-2xl">
-        <div className="card-body">
-          <h2 className="text-center text-2xl font-bold text-primary">
-            Sign Up
-          </h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-primary">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered w-full max-w-xs"
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Please enter your Name",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.name?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.name.message}
-                  </span>
-                )}
-              </label>
-            </div>
-
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-primary">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="input input-bordered w-full max-w-xs"
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: "Please enter your Email",
-                  },
-                  pattern: {
-                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                    message: "Please Provide a valid Email",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.email?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.email.message}
-                  </span>
-                )}
-                {errors.email?.type === "pattern" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.email.message}
-                  </span>
-                )}
-              </label>
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text text-primary">Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="Your Password"
-                className="input input-bordered w-full max-w-xs"
-                {...register("password", {
-                  required: {
-                    value: true,
-                    message: "Please enter your Password",
-                  },
-                  minLength: {
-                    value: 6,
-                    message: "Must be 6 characters or longer",
-                  },
-                })}
-              />
-              <label className="label">
-                {errors.password?.type === "required" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="label-text-alt text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-              </label>
-            </div>
-
-            {signInError}
+    <div className="flex h-screen justify-center items-center ">
+      <div className="card w-96 bg-accent shadow-2xl justify-center items-center">
+        <div className="card-body"></div>
+        <h2 className="text-center text-2xl font-bold text-primary">
+          Please Sign Up
+        </h2>
+        <form onSubmit={handleRegister}>
+          <div className="mb-3 ">
+            <label className="label " htmlFor="name">
+              Your Name
+            </label>
             <input
-              className="btn w-full max-w-xs text-white bg-teal-600 hover:bg-red-700"
-              type="submit"
-              value="Sign Up"
+              className="input input-bordered w-full max-w-xs"
+              type="text"
+              name="name"
             />
-          </form>
-          <p>
-            <small>
-              Already have an account?
-              <Link className="text-primary" to="/login">
-                Please login
-              </Link>
-            </small>
-          </p>
-          <div className="divider">OR</div>
-          <SocialLogin></SocialLogin>
-        </div>
+          </div>
+          <div className="mb-3 ">
+            <label className="label " htmlFor="email">
+              Email
+            </label>
+            <input
+              className="input input-bordered w-full max-w-xs"
+              type="email"
+              name="email"
+            />
+          </div>
+          <div className="mb-3 ">
+            <label className="label " htmlFor="password">
+              Password
+            </label>
+            <input
+              className="input input-bordered w-full max-w-xs"
+              type="password"
+              name="password"
+            />
+          </div>
+          <div className="mb-3 ">
+            <label className="label" htmlFor="Confirm password">
+              Confirm Password
+            </label>
+            <input
+              className="input input-bordered w-full max-w-xs"
+              type="password"
+              name="confirmPassword"
+            />
+          </div>
+          <input
+            className="btn btn-primary w-100 btn-lg fs-6"
+            type="submit"
+            value="Sign Up"
+          />
+        </form>
+        <p>
+          <small>
+            Already have an account?
+            <Link className="text-primary" to="/login" onClick={navigateLogin}>
+              Please login
+            </Link>
+          </small>
+        </p>
+        <div className="divider">OR</div>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

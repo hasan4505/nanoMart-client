@@ -4,7 +4,7 @@ import Footer from "../Shared/Footer";
 import useTools from "../../hooks/useTools";
 import AllTools from "./AllTools";
 import Summaries from "./Summaries";
-import Reviews from "./Reviews";
+import Reviews from "../Swiper/Reviews";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Mission from "./Mission ";
 import Request from "./Request";
@@ -32,6 +32,7 @@ const Home = () => {
         <p>See All</p>
       </button>
       <Summaries></Summaries>
+      <h2 className="text-4xl text-accent py-2">Meet Clients Satisfaction</h2>
       <Reviews></Reviews>
       <div className="card-actions justify-start">
         <Link to="/review" className="btn btn-primary">

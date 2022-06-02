@@ -1,26 +1,17 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import "../App/App.css";
-import "./Review.css";
-
-// import required modules
 import { Autoplay, Navigation } from "swiper";
-import useReviews from "../hooks/useReviews";
-import { Card } from "react-bootstrap";
-import Loading from "../Loading/Loading";
+import useReviews from "../../hooks/useReviews";
+import Loading from "../Shared/Loading";
 
-export default function App() {
+const Reviews = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [reviews, setReviews, isLoading] = useReviews();
-  console.log(swiperRef, setReviews);
 
   const reversedReviews = [...reviews].reverse();
 
@@ -57,26 +48,24 @@ export default function App() {
             className="mySwiper"
           >
             <div>
-              {reversedReviews.map(({ user, review, userImage, rating }) => (
-                <SwiperSlide className="pb-5 pt-2" key={review?.id}>
-                  <Card className=" shadow review-card border-0 ">
-                    <Card.Body>
-                      <Card.Title>
-                        {" "}
-                        <div className="d-flex justify-content-start align-items-center">
-                          <div>
-                            <img
-                              className="review-img"
-                              src={userImage}
-                              alt={user}
-                            ></img>{" "}
-                          </div>
-                          <h5 className="ms-3 mb-0 user"> {user}</h5>
-                        </div>
-                      </Card.Title>
-
-                      <Card.Text>
-                        <div className="d-flex justify-content-center my-3">
+              {reversedReviews.map(
+                ({ user, name, rating, review_, picture }) => (
+                  <SwiperSlide className="pb-5 pt-2" key={review_?._id}>
+                    <div class="card lg:card-top bg-teal-200 rounded-full max-h-50 items-center text-center">
+                      <figure class="px-10 pt-10">
+                        <img
+                          className="w-24 mask mask-hexagon items-center text-center"
+                          src={picture}
+                          alt={user}
+                        />
+                      </figure>
+                      <div class="card-body items-center text-center">
+                        <div
+                          className="flex justify
+                        
+                        
+                        -center my-3"
+                        >
                           <div className="d-none">
                             {rating
                               ? (stars = new Array(rating).fill(0))
@@ -92,18 +81,23 @@ export default function App() {
                               ))}
                           </div>
                         </div>
-                        <i className="review text-muted">
-                          "{review.slice(0, 150)}"
-                        </i>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </SwiperSlide>
-              ))}
+                        <i className="review text-muted">{review_}</i>
+                        <h5 className="ms-3 mb-0 user"> {user}</h5>
+
+                        <div class="card-actions">
+                          <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              )}
             </div>
           </Swiper>
         </>
       )}
     </div>
   );
-}
+};
+
+export default Reviews;
